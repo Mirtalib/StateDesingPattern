@@ -1,11 +1,12 @@
-﻿//Soyut State nesnesi
+﻿
 public interface IAccountState
 {
     void WithdrawMoney();
     void PayInterest();
 }
 
-//Concrete State nesnesi - 1
+
+
 public class GoldAccount : IAccountState
 {
     public void PayInterest()
@@ -19,7 +20,21 @@ public class GoldAccount : IAccountState
     }
 }
 
-//Concrete State nesnesi - 2
+
+public class PremiumAccount : IAccountState
+{
+    public void PayInterest()
+    {
+        Console.WriteLine("Interest paid with Premium Account");
+    }
+
+    public void WithdrawMoney()
+    {
+        Console.WriteLine("Money is taken with Premium Account");
+    }
+}
+
+
 public class NormalAccount : IAccountState
 {
     public void PayInterest()
@@ -33,7 +48,7 @@ public class NormalAccount : IAccountState
     }
 }
 
-//State değişimlerini yöneten ve statelere göre davranışları değişen context nesnesi  
+
 public class Account
 {
     private IAccountState _accountState;
