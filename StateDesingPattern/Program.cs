@@ -59,17 +59,21 @@ public class Account
     }
 }
 
-
-static void Main(string[] args)
+class Program
 {
-    Account account = new Account();
-    account.WithdrawMoney();
-    account.PayInterest();
 
-    account.ChangeStatus(new GoldAccount());
 
-    account.WithdrawMoney();
-    account.PayInterest();
+    static void Main(string[] args)
+    {
+        Account account = new Account();
+        account.WithdrawMoney();
+        account.PayInterest();
 
-    Console.ReadKey();
+        account.ChangeStatus(new GoldAccount());
+
+        account.WithdrawMoney();
+        account.PayInterest();
+
+        Console.ReadKey();
+    }
 }
